@@ -7,13 +7,13 @@ source = {
 }
 
 
--- description = {
---   summary = "Spatial Transformer Networks for Torch",
---   detailed = [[
---   ]],
---   homepage = "https://github.com/qassemoquab/stnbhwd",
---   license = "MIT"
---}
+description = {
+  summary = "Perspective Transformer Layer for Torch",
+  detailed = [[
+  ]],
+  homepage = "https://github.com/xcyan/ptnbhwd",
+  license = "MIT"
+}
 
 
 dependencies = {
