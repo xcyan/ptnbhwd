@@ -1,14 +1,14 @@
 # Perspective Transformer Layer
 
+This is the torch implementation of the [Perspective Transformer Layer](https://papers.nips.cc/paper/6206-perspective-transformer-nets-learning-single-view-3d-object-reconstruction-without-3d-supervision.pdf), which is built on top of the [STN torch implementation](https://github.com/qassemoquab/stnbhwd).
+
 ## Build
 To build the ptn libriary, run the following script.
 ```
 luarocks make ptnbhwd-scm-1.rockspec
 ```
 
-## Main modules
-
-This is the torch implementation of the [Perspective Transformer Layer](https://papers.nips.cc/paper/6206-perspective-transformer-nets-learning-single-view-3d-object-reconstruction-without-3d-supervision.pdf), which is built on top of the [STN torch implementation](https://github.com/qassemoquab/stnbhwd).
+## Usage
 
 ``` lua
 require 'ptn'
