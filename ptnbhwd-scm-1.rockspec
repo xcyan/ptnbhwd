@@ -3,7 +3,7 @@ version = "scm-1"
 
 
 source = {
-  url = "git://github.com/qassemoquab/stnbhwd.git",
+  url = "https://github.com/xcyan/ptnbhwd.git",
 }
 
 

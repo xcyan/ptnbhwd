@@ -8,7 +8,7 @@ end
 
 --require('ptn.AffineTransformMatrixGenerator')
 --require('ptn.AffineGridGeneratorBHWD')
-require('ptn.BilinearSamplerBHWD')
+--require('ptn.BilinearSamplerBHWD')
 
 require('ptn.PerspectiveGridGenerator')
 require('ptn.BilinearSamplerPerspective')
