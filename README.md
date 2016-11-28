@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # stnbhwd
 
 ## Main modules
@@ -39,3 +40,7 @@ nn.AffineTransformMatrixGenerator(useRotation, useScale, useTranslation)
 
 
 If this code is useful to your research, please cite this repository.
+=======
+# ptnbhwd
+Perspective Transformer Layer
+>>>>>>> 938c85f8ce1698ff89ae363b563a3e44e884a9c6
