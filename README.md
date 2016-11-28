@@ -1,46 +1,38 @@
-<<<<<<< HEAD
-# stnbhwd
+# ptnbhwd
+Perspective Transformer Layer
 
 ## Main modules
 
-These are the basic modules (BHWD layout) needed to implement a Spatial Transformer Network (Jaderberg et al.) http://arxiv.org/abs/1506.02025
+This is the torch implementation of the [Perspective Transformer Layer](https://papers.nips.cc/paper/6206-perspective-transformer-nets-learning-single-view-3d-object-reconstruction-without-3d-supervision.pdf), which is built on top of the [STN torch implementation](https://github.com/qassemoquab/stnbhwd).
 
 ``` lua
-require 'stn'
+require 'ptn'
 
-nn.AffineGridGeneratorBHWD(height, width)
--- takes B x 2 x 3 affine transform matrices as input, 
--- outputs a height x width grid in normalized [-1,1] coordinates
--- output layout is B,H,W,2 where the first coordinate in the 4th dimension is y, and the second is x
+nn.PerspectiveGridGenerator(depth, height, width, focal_length)
+-- takes B x 4 x 4 affine transform matrices as input, 
+-- outputs a depth x height x width grid in normalized [dmin,dmax] x [-1,1] x [-1,1] coordinates, where dmin and dmax represent the minimal and maximal disparity.
 
-nn.BilinearSamplerBHWD()
+nn.BilinearSamplerPerspective()
 -- takes a table {inputImages, grids} as inputs
 -- outputs the interpolated images according to the grids
 -- inputImages is a batch of samples in BHWD layout
--- grids is a batch of grids (output of AffineGridGeneratorBHWD)
+-- grids is a batch of grids (output of PerspectiveGridGenerator)
 -- output is also BHWD
 ```
 
-## Advanced module
-
-This module allows the user to put a constraint on the possible transformations.
-It should be placed between the localisation network and the grid generator.
-
-``` lua
-require 'stn'
-
-nn.AffineTransformMatrixGenerator(useRotation, useScale, useTranslation)
--- takes a B x nbParams tensor as inputs
--- nbParams depends on the contrained transformation
--- The parameters for the selected transformation(s) should be supplied in the
--- following order: rotationAngle, scaleFactor, translationX, translationY
--- If no transformation is specified, it generates a generic affine transformation (nbParams = 6)
--- outputs B x 2 x 3 affine transform matrices
+## Citation
+If you find this useful, please cite our work as follows:
+```
+@incollection{NIPS2016_6206,
+title = {Perspective Transformer Nets: Learning Single-View 3D Object Reconstruction without 3D Supervision},
+author = {Yan, Xinchen and Yang, Jimei and Yumer, Ersin and Guo, Yijie and Lee, Honglak},
+booktitle = {Advances in Neural Information Processing Systems 29},
+editor = {D. D. Lee and M. Sugiyama and U. V. Luxburg and I. Guyon and R. Garnett},
+pages = {1696--1704},
+year = {2016},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/6206-perspective-transformer-nets-learning-single-view-3d-object-reconstruction-without-3d-supervision.pdf}
+}
 ```
 
 
-If this code is useful to your research, please cite this repository.
-=======
-# ptnbhwd
-Perspective Transformer Layer
->>>>>>> 938c85f8ce1698ff89ae363b563a3e44e884a9c6
