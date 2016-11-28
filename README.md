@@ -1,5 +1,4 @@
-# ptnbhwd
-Perspective Transformer Layer
+# Perspective Transformer Layer
 
 ## Main modules
 
